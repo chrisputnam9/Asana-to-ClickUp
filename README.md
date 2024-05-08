@@ -6,7 +6,7 @@ And, at the time I wanted to migrate, the ClickUp importer was experiencing some
 # Caveats
  - Not all data will be migrated (for example, completed date is lost)
  - If you use the script, projects & sections will map to lists in ClickUp, using ":" as a separator
- - Dependencies are not handled by the script at this time
+ - Dependencies are not handled by the script at this time - but they could be mapped to custom fields during import
  - Todos will be imported with status either 'TO DO' or 'Completed' with the script
 
 # How to Import Asana to ClickUp via CSV
