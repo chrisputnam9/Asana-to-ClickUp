@@ -12,6 +12,24 @@ Todo
   Make sample text
   Make more sample text
   Add one more item",Sample,,,
-1238,01/03/24,,01/03/24,Subtask1,,,,,,,,,Test task 2 with a link https://google.com,,
-1239,01/03/24,,01/03/24,Subtask2,,,,,,,,,Test task 2 with a link https://google.com,,
-1240,01/03/24,,01/03/24,Subtask3,,,,,,,,,Test task 2 with a link https://google.com,,
+1238,2024-01-03,,2024-01-03,Subtask1,,,,,,,,,Test task 2 with a link https://google.com,,
+1239,2024-01-03,,2024-01-03,Subtask2,,,,,,,,,Test task 2 with a link https://google.com,,
+1240,2024-01-03,,2024-01-03,Subtask3,,,,,,,,,Test task 2 with a link https://google.com,,
+1241,2024-01-05,,2024-01-05,Duplicate test,Current Focus,,person2@example.com,,2024-01-05,,"This is a duplicate test
+Only one duplicate should be kept
+And, an incomplete task should be preferred if present",Sample2,,,
+1242,2024-01-04,2024-01-04,2024-01-04,Duplicate test,Current Focus,,person2@example.com,,2024-01-04,,"This is a duplicate test
+Only one duplicate should be kept
+And, an incomplete task should be preferred if present",Sample2,,,
+1243,2024-01-03,2024-01-03,2024-01-03,Duplicate test,Current Focus,,person2@example.com,,2024-01-03,,"This is a duplicate test
+Only one duplicate should be kept
+And, an incomplete task should be preferred if present",Sample2,,,
+1244,2024-01-03,2024-01-03,2024-01-03,Duplicate test 2,Maybe Later,,,,2024-01-03,,"This is a duplicate test
+Only one duplicate should be kept
+And, an incomplete task should be preferred if present",Sample2,,,
+1244,2024-01-03,2024-01-03,2024-01-03,Duplicate test 2,Maybe Later,,,,2024-01-03,,"This is a duplicate test
+Only one duplicate should be kept
+And, an incomplete task should be preferred if present",Sample2,,,
+1244,2024-01-03,2024-01-03,2024-01-03,Duplicate test 2,Maybe Later,,,,2024-01-03,,"This is a duplicate test
+Only one duplicate should be kept
+And, an incomplete task should be preferred if present",Sample2,,,
