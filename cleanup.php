@@ -1,6 +1,7 @@
 <?php
 
-// TODO will load in specified Asana CSV, process data, and write to a CSV that's ready for ClickUp import
+define('STATUS_OPEN', 'to do');
+define('STATUS_CLOSED', 'complete');
 
 $file = $argv[1] ?? false;
 if (empty($file) || !file_exists($file) || !is_readable($file)) {
@@ -33,26 +34,32 @@ while ($row = fgetcsv($file_asana)) {
 		continue;
 	}
 
-	$projects = implode("\n",
-		array_map(
-			'trim',
-			explode(',', $task_asana['Projects'])
-		)
+	// Process projects and sections to lists
+	$projects_array = array_map(
+		'trim',
+		explode(',', $task_asana['Projects'])
 	);
+	$section = $task_asana['Section/Column'];
+	if (!empty($section) && $section !== '(no section)') {
+		$projects_with_section_array = [];
+		foreach ($projects_array as $project) {
+			$projects_with_section_array[] = "$project:$section";
+		}
+		$projects_array = $projects_with_section_array;
+	}
+	$projects = implode("|", $projects_array);
 
 	$task_clickup = [
 		'Date Created' => $task_asana['Created At'],
-		'Status' => $task_asana['Completed At'] ? 'Completed' : 'TO DO',
+		'Status' => $task_asana['Completed At'] ? STATUS_CLOSED : STATUS_OPEN,
 		'Task Name' => $task_name,
-		'List (ClickUp)' => $task_asana['Projects'],
+		'List (ClickUp)' => $projects,
 		'Task assignee(s)' => $task_asana['Assignee Email'],
 		'Start Date' => $task_asana['Start Date'],
 		'Due Date' => $task_asana['Due Date'],
 		'Tags' => $task_asana['Tags'],
 		'Description content' => $task_asana['Notes'],
 		'Subtasks' => [],
-		'Blocked By (Dependencies)' => $task_asana['Blocked By (Dependencies)'],
-		'Blocking (Dependencies)' => $task_asana['Blocking (Dependencies)'],
 	];
 
 	// Only keep one task with same key details
@@ -60,7 +67,7 @@ while ($row = fgetcsv($file_asana)) {
 	$existing_task = $tasks[$task_name] ?? [];
 	foreach ($existing_task as $_existing_task_id => $_existing_task) {
 		if (are_similar_tasks($task_clickup, $_existing_task)) {
-			if ($task_clickup['Status'] === 'TO DO' && $_existing_task['Status'] === 'Completed') {
+			if ($task_clickup['Status'] === 'TO DO' && $_existing_task['Status'] === STATUS_CLOSED) {
 				// Replace existing task with incomplete version
 				unset($tasks[$task_name][$_existing_task_id]);
 			} else {
@@ -93,7 +100,7 @@ foreach ($subtasks as $parent_task_name => $subtask_list) {
 // Loop through all tasks and flatten subtasks
 foreach ($tasks as $task_name => $task_list) {
 	foreach ($task_list as $task_id => $task) {
-		$tasks[$task_name][$task_id]['Subtasks'] = implode("\n", $task['Subtasks']);
+		$tasks[$task_name][$task_id]['Subtasks'] = implode("|", $task['Subtasks']);
 	}
 }
 
