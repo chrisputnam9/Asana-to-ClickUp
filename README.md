@@ -4,7 +4,7 @@ Depending on exactly what you want to pull over, the built-in importer might not
 
 At the time of our migration, it was lacking support for some data we wanted to bring over, and there were some bugs preventing us from completing imports with it at all.
 
-# How to Import Asana to ClickUp via CSV
+# Instructions: How to Import Asana to ClickUp via CSV
 
 Unfortunately, at least on the free plan, you'll have to go project by project with the Asana export.
 
@@ -24,7 +24,7 @@ For each Asana project you want to move over, do the following:
 -   Not all data will be migrated (for example, completed date and dependencies are ignored/lost)
 -   Todos will be imported with status configured at top of script based on completed date
 -   Projects & sections will map to lists in ClickUp, using ":" as a separator
--   Items in multiple lists are not supported, so they will pull into lists with titles like "Sample1:Section|Sample2:Section".  You can then manually organize those items in ClickUp after import.
+-   Items in multiple lists are not supported, so they will pull into lists with titles like "Sample1:Section|Sample2:Section". You can then manually organize those items in ClickUp after import.
 
 ### Usage
 
@@ -38,6 +38,7 @@ These steps could be done completely manually, or with help from sheet formulas,
 Refer to the Asana and ClickUp sample CSVs in the data-samples folder to help clarify these steps.
 
 1.  Remove these columns (except for any you would like to import as custom fields):
+
     -   Task ID
     -   Last Modified
     -   Assignee
@@ -45,6 +46,7 @@ Refer to the Asana and ClickUp sample CSVs in the data-samples folder to help cl
     -   Blocking (Dependencies)
 
 2.  Rename the following columns:
+
     -   Created At -> Date Created
     -   Completed At -> Status
     -   Name -> Task Name
@@ -54,30 +56,36 @@ Refer to the Asana and ClickUp sample CSVs in the data-samples folder to help cl
 
 3.  Add a new column called Subtasks
 
-4.  Choose what you'd like to do with Section/Column.  For example you could:
+4.  Choose what you'd like to do with Section/Column. For example you could:
+
     -   Add it to project/list names (as our script does)
     -   Add it as a status (in which case make sure you refer to step 6 below as you decide how to map everything)
     -   Leave it as-is and map to a custom field during import
 
 5.  For each task with a "Parent task" value
+
     -   Find the parent task in the CSV
     -   Add the Task Name to Subtasks in the parent task's row - separate multiple subtasks with a comma or a pipe - "|"
     -   Remove the subtask row (the one with the "Parent task" value)
 
 6.  Update the Status column to match ClickUp's statuses. For example, you might:
+
     -   Change each date value (indicating completion) to "Closed"
     -   Change each blank value to "Open"
 
 7.  Remove these columns once they are no longer needed for reference.
+
     -   Section/Column
     -   Parent Task
 
 8.  The following columns can remain unchanged
+
     -   Start Date
     -   Due Date
     -   Tags
 
 9.  Remove any rows you do not want to import.
+
     -   For example, Asana creates a new task every time a repeating task is completed. You might only want to import one version of each task.
     -   Perhaps you prefer not to import any completed tasks at all
 
@@ -91,3 +99,18 @@ Refer to the Asana and ClickUp sample CSVs in the data-samples folder to help cl
 
 -   Use the manual steps and PHP script as a reference
 -   Submit your script here as a PR if you want to share with others!
+
+# Issues & Contributions
+
+Found a bug or a mistake? Have a suggestion?
+
+-   [Submit an issue here](https://github.com/chrisputnam9/Asana-to-ClickUp/issues)
+
+Want to add your own script or other improvements?
+
+-   [Fork & Submit a PR in GitHub](https://github.com/chrisputnam9/Asana-to-ClickUp)
+
+Developer sustenance funding is welcome, but not expected
+
+-   [Ko-fi](https://ko-fi.com/chrisputnam9)
+-   [Github Sponsor](https://github.com/sponsors/chrisputnam9)
