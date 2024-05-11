@@ -39,6 +39,10 @@ while ($row = fgetcsv($file_asana)) {
 		'trim',
 		explode(',', $task_asana['Projects'])
 	);
+	// Put completed items in a single list for easier organization
+	if (!empty($task_asana['Completed At'])) {
+		$projects_array = [$projects_array[0]];
+	}
 	$section = $task_asana['Section/Column'];
 	if (!empty($section) && $section !== '(no section)') {
 		$projects_with_section_array = [];
