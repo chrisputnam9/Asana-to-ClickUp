@@ -57,7 +57,7 @@ while ($row = fgetcsv($file_asana)) {
 		'Task assignee(s)' => $task_asana['Assignee Email'],
 		'Start Date' => $task_asana['Start Date'],
 		'Due Date' => $task_asana['Due Date'],
-		'Tags' => $task_asana['Tags'],
+		'Tags' => implode('|', array_map('trim', explode(',', $task_asana['Tags']))),
 		'Description content' => $task_asana['Notes'],
 		'Subtasks' => [],
 	];

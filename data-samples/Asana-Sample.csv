@@ -1,9 +1,9 @@
 Task ID,Created At,Completed At,Last Modified,Name,Section/Column,Assignee,Assignee Email,Start Date,Due Date,Tags,Notes,Projects,Parent task,Blocked By (Dependencies),Blocking (Dependencies)
 1234,2024-01-01,2024-02-01,2024-01-03,Test task 1,(no section),,,,2024-01-15,,,Sample,,,
-1235,2024-01-03,,2024-01-03,Test task 2 with a link https://google.com,Current Focus,,person@example.com,,2024-02-20,,,Sample,,,
+1235,2024-01-03,,2024-01-03,Test task 2 with a link https://google.com,Current Focus,,person@example.com,,2024-02-20,"Tag1, Tag2",,Sample,,,
 1236,2024-01-05,,2024-01-07,💻 Test task 3 with an emoji,Maybe Later,,person2@example.com,,,,"This one has some notes
 Multiple lines in fact","Sample, Sample2",,,
-1237,2024-01-07,,2024-01-07,Test task 4,New Ideas,,,,,,"This one has some fancier notes
+1237,2024-01-07,,2024-01-07,Test task 4,New Ideas,,,,,Tag1,"This one has some fancier notes
 ——————————————————————————
 1. Testing notes
 2. Yep, here we are

@@ -1,9 +1,9 @@
 "Date Created",Status,"Task Name","List (ClickUp)","Task assignee(s)","Start Date","Due Date",Tags,"Description content",Subtasks
 2024-01-01,Closed,"Test task 1",Sample,,,2024-01-15,,,
-2024-01-03,Open,"Test task 2 with a link https://google.com","Sample:Current Focus",person@example.com,,2024-02-20,,,Subtask1|Subtask2|Subtask3
+2024-01-03,Open,"Test task 2 with a link https://google.com","Sample:Current Focus",person@example.com,,2024-02-20,Tag1|Tag2,,Subtask1|Subtask2|Subtask3
 2024-01-05,Open,"💻 Test task 3 with an emoji","Sample:Maybe Later|Sample2:Maybe Later",person2@example.com,,,,"This one has some notes
 Multiple lines in fact",
-2024-01-07,Open,"Test task 4","Sample:New Ideas",,,,,"This one has some fancier notes
+2024-01-07,Open,"Test task 4","Sample:New Ideas",,,,Tag1,"This one has some fancier notes
 ——————————————————————————
 1. Testing notes
 2. Yep, here we are

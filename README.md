@@ -16,6 +16,8 @@ For each Asana project you want to move over, do the following:
 2. [Export the Asana project to CSV](https://help.asana.com/hc/en-us/articles/14139896860955-Privacy-and-security#sts=Export)
 3. Clean up the CSV to match ClickUp's format. See the following sections for options.
 4. [Import your cleaned-up CSV to ClickUp](https://help.clickup.com/hc/en-us/articles/6310834724247-Import-a-data-file-into-ClickUp)
+    - **Note:** If you used our script, make sure you select PIPE(|) as the delimiter for both Subtasks and Tags
+    - Example: ![ClickUp Import Delimiter Settings](https://cmp.onl/tnHn)
 
 ## Cleanup Option 1 - PHP Script
 
