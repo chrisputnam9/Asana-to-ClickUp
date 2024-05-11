@@ -12,13 +12,10 @@ We highly recommend following the full process with a single project into a test
 
 For each Asana project you want to move over, do the following:
 
-1. Create a space into which you'll import the Asana project.
-2. [Export the Asana project to CSV](https://help.asana.com/hc/en-us/articles/14139896860955-Privacy-and-security#sts=Export)
-3. Clean up the CSV to match ClickUp's format. See the following sections for options.
-4. [Import your cleaned-up CSV to ClickUp](https://help.clickup.com/hc/en-us/articles/6310834724247-Import-a-data-file-into-ClickUp)
-    - **Note:** If you used our script, make sure you select PIPE(|) as the delimiter for both Subtasks and Tags. For example:
-
-![ClickUp Import Delimiter Settings](https://cmp.onl/tnHn)
+1. [Export the Asana project to CSV](https://help.asana.com/hc/en-us/articles/14139896860955-Privacy-and-security#sts=Export)
+2. Clean up the CSV to match ClickUp's format. See the below sections for options.
+3. [Import your cleaned-up CSV to ClickUp](https://help.clickup.com/hc/en-us/articles/6310834724247-Import-a-data-file-into-ClickUp)
+    - **Note:** If you used our script, make sure you select PIPE(|) as the delimiter for both Subtasks and Tags. [Example screenshot](https://cmp.onl/tnHn)
 
 ## Cleanup Option 1 - PHP Script
 
@@ -27,12 +24,12 @@ For each Asana project you want to move over, do the following:
 -   Not all data will be migrated (for example, completed date and dependencies are ignored/lost)
 -   Todos will be imported with status configured at top of script based on completed date
 -   Projects & sections will map to lists in ClickUp, using ":" as a separator
--   Items in multiple lists are not supported, so they will pull into lists with titles like "Sample1:Section|Sample2:Section". You can then manually organize those items in ClickUp after import.
+-   Items in multiple lists are not supported by the CSV importer, so they will pull into lists with titles like "Sample1:Section|Sample2:Section". You can then manually organize those items in ClickUp after import.
 
 ### Usage
 
 1. Run `php cleanup.php path/to/Asana-Export.csv` replacing the path with the actual filepath of your export
-2. The script will output a new CSV file in the same directory as your Asana file with "ClicUp-Ready.csv" appended to the filename
+2. The script will output a new CSV file in the same directory as your Asana file with "ClickUp-Ready.csv" appended to the filename
 
 ## Cleanup Option 2 - Manual Steps
 
