@@ -24,6 +24,7 @@ For each Asana project you want to move over, do the following:
 -   Not all data will be migrated (for example, completed date and dependencies are ignored/lost)
 -   Todos will be imported with status configured at top of script based on completed date
 -   Projects & sections will map to lists in ClickUp, using ":" as a separator
+-   Items in multiple lists are not supported, so they will pull into lists with titles like "Sample1:Section|Sample2:Section".  You can then manually organize those items in ClickUp after import.
 
 ### Usage
 
@@ -64,8 +65,8 @@ Refer to the Asana and ClickUp sample CSVs in the data-samples folder to help cl
     -   Remove the subtask row (the one with the "Parent task" value)
 
 6.  Update the Status column to match ClickUp's statuses. For example, you might:
-    -   Change each date value (indicating completion) to "complete"
-    -   Change each blank value to "to do"
+    -   Change each date value (indicating completion) to "Closed"
+    -   Change each blank value to "Open"
 
 7.  Remove these columns once they are no longer needed for reference.
     -   Section/Column
@@ -79,6 +80,12 @@ Refer to the Asana and ClickUp sample CSVs in the data-samples folder to help cl
 9.  Remove any rows you do not want to import.
     -   For example, Asana creates a new task every time a repeating task is completed. You might only want to import one version of each task.
     -   Perhaps you prefer not to import any completed tasks at all
+
+10. Decide how to handle items in multiple lists
+    -   At this time, Asana exports these as comma separated values in the Projects column
+    -   But, ClickUp's CSV import does not support multiple lists per task
+    -   You could leave the values as-is, and they will import to lists like "Project1, Project2" which you can then process manually in ClickUp.
+    -   Or, perhaps you'll prefer to pre-process and remove extra projects or bring them in some other way (description, custom field, etc.)
 
 ## Cleanup Option 3 - Write Your Own Script
 

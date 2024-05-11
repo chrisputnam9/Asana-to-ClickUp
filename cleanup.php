@@ -1,7 +1,7 @@
 <?php
 
-define('STATUS_OPEN', 'to do');
-define('STATUS_CLOSED', 'complete');
+define('STATUS_OPEN', 'Open');
+define('STATUS_CLOSED', 'Closed');
 
 $file = $argv[1] ?? false;
 if (empty($file) || !file_exists($file) || !is_readable($file)) {
@@ -63,12 +63,12 @@ while ($row = fgetcsv($file_asana)) {
 	];
 
 	// Only keep one task with same key details
-	// - and prefer incomplete version
+	// - and prefer open version
 	$existing_task = $tasks[$task_name] ?? [];
 	foreach ($existing_task as $_existing_task_id => $_existing_task) {
 		if (are_similar_tasks($task_clickup, $_existing_task)) {
-			if ($task_clickup['Status'] === 'TO DO' && $_existing_task['Status'] === STATUS_CLOSED) {
-				// Replace existing task with incomplete version
+			if ($task_clickup['Status'] === STATUS_OPEN && $_existing_task['Status'] === STATUS_CLOSED) {
+				// Replace existing task with open version
 				unset($tasks[$task_name][$_existing_task_id]);
 			} else {
 				// Skip this task
