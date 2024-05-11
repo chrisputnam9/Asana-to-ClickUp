@@ -79,20 +79,20 @@ Refer to the Asana and ClickUp sample CSVs in the data-samples folder to help cl
     -   Section/Column
     -   Parent Task
 
-8.  The following columns can remain unchanged
+8.  The following columns may remain unchanged
 
     -   Start Date
     -   Due Date
-    -   Tags
+    -   Tags (unless you need to change the delimiter to match other data)
 
 9.  Remove any rows you do not want to import.
 
     -   For example, Asana creates a new task every time a repeating task is completed. You might only want to import one version of each task.
     -   Perhaps you prefer not to import any completed tasks at all
 
-10. Decide how to handle items in multiple lists
+10. Decide how to handle items in multiple projects/lists
     -   At this time, Asana exports these as comma separated values in the Projects column
-    -   But, ClickUp's CSV import does not support multiple lists per task
+    -   But, ClickUp's CSV importer does not support multiple lists per task
     -   You could leave the values as-is, and they will import to lists like "Project1, Project2" which you can then process manually in ClickUp.
     -   Or, perhaps you'll prefer to pre-process and remove extra projects or bring them in some other way (description, custom field, etc.)
 
