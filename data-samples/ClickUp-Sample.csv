@@ -1,11 +1,8 @@
-"Date Created",Status,"Task Name","List (ClickUp)","Task assignee(s)","Start Date","Due Date",Tags,"Description content",Subtasks,"Blocked By (Dependencies)","Blocking (Dependencies)"
-2024-01-01,complete,"Test task 1",Sample,,,2024-01-15,,,,,
-2024-01-03,"to do","Test task 2 with a link https://google.com","Sample:Current Focus",person@example.com,,2024-02-20,,,"Subtask1
-Subtask2
-Subtask3",,
-2024-01-05,"to do","💻 Test task 3 with an emoji","Sample:Maybe Later
-Sample2:Maybe Later",person2@example.com,,,,"This one has some notes
-Multiple lines in fact",,,
+"Date Created",Status,"Task Name","List (ClickUp)","Task assignee(s)","Start Date","Due Date",Tags,"Description content",Subtasks
+2024-01-01,complete,"Test task 1",Sample,,,2024-01-15,,,
+2024-01-03,"to do","Test task 2 with a link https://google.com","Sample:Current Focus",person@example.com,,2024-02-20,,,Subtask1|Subtask2|Subtask3
+2024-01-05,"to do","💻 Test task 3 with an emoji","Sample:Maybe Later|Sample2:Maybe Later",person2@example.com,,,,"This one has some notes
+Multiple lines in fact",
 2024-01-07,"to do","Test task 4","Sample:New Ideas",,,,,"This one has some fancier notes
 ——————————————————————————
 1. Testing notes
@@ -14,10 +11,10 @@ Multiple lines in fact",,,
 Todo
   Make sample text
   Make more sample text
-  Add one more item",,,
+  Add one more item",
 2024-01-05,"to do","Duplicate test","Sample2:Current Focus",person2@example.com,,2024-01-05,,"This is a duplicate test
 Only one duplicate should be kept
-And, an incomplete task should be preferred if present",,,
+And, an incomplete task should be preferred if present",
 2024-01-03,complete,"Duplicate test 2","Sample2:Maybe Later",,,2024-01-03,,"This is a duplicate test
 Only one duplicate should be kept
-And, an incomplete task should be preferred if present",,,
+And, an incomplete task should be preferred if present",
