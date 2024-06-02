@@ -4,6 +4,12 @@ Depending on exactly what you want to pull over, the built-in importer might not
 
 At the time of our migration, it was lacking support for some data we wanted to bring over, and there were some bugs preventing us from completing imports with it at all.
 
+# Other Scripting References & Tools
+-   [PHP Asana CLI](https://github.com/chrisputnam9/pacli)
+-   [PHP ClickUp CLI](https://github.com/chrisputnam9/pcucli)
+-   More scripts to help resolve various import-related challenges (with CSV or other imports) - [utilities](https://github.com/chrisputnam9/Asana-to-ClickUp/tree/master/utilities)
+    - Run a script with no argumetns to get a quick explanation and usage guide (eg. `php csv_combine.php`)
+
 # Instructions: How to Import Asana to ClickUp via CSV
 
 Unfortunately, at least on the free plan, you'll have to go project by project with the Asana export.
